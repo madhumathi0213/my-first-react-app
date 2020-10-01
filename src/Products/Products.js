@@ -1,19 +1,20 @@
 import React,{Component} from 'react';
 import './Products.css';
-import {ProductItem} from '../ProductList';
 
 
 class Products extends Component
 {
-    state={ProductItem:ProductItem}
     render() {
-        const item = this.state.ProductItem.map(item => (
-        <div className="Product">
-            <div><img src={item.image}></img></div>
-            <div>{item.name}</div>
-            <div>{item.price}</div>
-        </div>
-        ))
+        const Product_Item =this.props.item;
+        console.log(Product_Item);
+        const item = Product_Item.map(item => (
+            <div className="Product">
+                <div><img src={item.image}></img></div>
+                <div>{item.name}</div>
+                <div>{item.price}</div>
+            </div>
+            ))
+            console.log(item);
         return(<div>{item}</div>)
     }    
 }
