@@ -1,7 +1,6 @@
 .Product{
     text-align: center;
     margin-top: 40px;
-    display: flex;
 }
 .Products div{
     display: flex;
