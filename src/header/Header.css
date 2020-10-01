@@ -1,0 +1,60 @@
+.header
+{
+    text-align: center;
+    background-image: url('background.png');
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 100%;
+    margin: 0;
+    color: white;
+}
+.header img{
+    margin-left: 500px;
+    margin-top: 20px;
+}
+.header input
+{
+    border: none;
+    border-bottom: 1px solid black;
+    height: 30px;
+    width: 300px;
+    float: right;
+    margin-top: 80px;
+    margin-right: 200px;
+    background:none;
+}
+.header input:focus{
+    outline: none;
+}
+.header li
+{
+    padding :20px;
+    display: inline-block;
+    font-size: 20px;
+    
+}
+/*.header ul :hover{
+    border-radius: 8px;
+    height: 10px;
+    margin-top: 10px;
+background-color :gray;
+
+}*/
+.header .sideImage
+{
+    height: 100px;
+    width: 100px;
+    float:right;
+}
+.header .top-bar{
+    width: 100%;
+}
+.header :hover{
+    background-color: white;
+    color:black;
+}
+::placeholder
+{
+    letter-spacing: 4px;
+}
+
