@@ -9,7 +9,7 @@ class Header extends Component
             <div className="top-bar">
                 <img src={logo}></img>
                 <input type="text" placeholder="search" onChange={this.props.search}></input>
-                <input type="number" placeholder="search by price" onChange={this.props.search_price}></input>
+                <input type="text" placeholder="search by price" onChange={this.props.search_price}></input>
                 <ul>
                     <li>Skin Care</li>
                     <li>Hair Care</li>

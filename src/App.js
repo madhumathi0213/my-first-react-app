@@ -17,29 +17,25 @@ searchHandler=(event)=>{
 }
 SearchFilterHandler=()=>{
      
-    return this.state.ProductItem.filter((item)=> item.name.includes(this.state.search));
+    return this.state.ProductItem.filter((item)=> item.name.toLowerCase().includes(this.state.search));
 }
-searchPriceHandler=(event) =>{
-  let price=event.target.value;
-  this.setState({search_price:price})
+SearchByPriceHandler=()=>{
+  let it=this.state.ProductItem.filter((item) =>item.price.contains(this.state.search_price));
 }
-// SearchByPriceHandler=()=>{
-//   return this.state.ProductItem.filter((item)=>item.price<=this.state.search_price);
-// }
  render(){
   let items=this.state.ProductItem;
-  if(this.state.search != "")
+  if(this.state.search != null)
   {
   items = this.SearchFilterHandler()
   }
-  // if(this.state.search_price!=="")
-  // {
-  //   items =this.SearchByPriceHandler()
-  // }
-     return (
+  if(this.state.search_price != null)
+  {
+    
+  }
+    return (
       <fragment>
-        <Header search={this.searchHandler}/>
-        <Products item={items} price={items}/>
+        <Header search={this.searchHandler} search_price={this.SearchFilterHandler}/>
+        <Products item={items}/>
       </fragment>
     )
   }
