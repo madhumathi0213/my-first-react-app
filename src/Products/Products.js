@@ -27,7 +27,10 @@ class Products extends Component
             </div>
             ))
         return(
-        <div>{item},{items}</div>
+        <div>
+            {items}
+            {item}
+        </div>
         )
     }    
 }
