@@ -15,6 +15,10 @@ searchHandler=(event)=>{
     let text=event.target.value;
     this.setState({search:text})
 }
+searchPrice=(event)=>{
+  let price =event.target.value;
+  this.setState({search_price:price})
+}
 SearchFilterHandler=()=>{
      
     return this.state.ProductItem.filter((item)=> item.name.toLowerCase().includes(this.state.search));
