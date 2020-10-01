@@ -8,6 +8,15 @@ class Products extends Component
         const Product_Item =this.props.item;
         const price=this.props.price;
         console.log(price);
+        const items =price.map(item => (
+            <div className="Products">
+                <div>
+                    <img src={item.image}></img>
+                    <h1>{item.name}</h1>
+                    <h4>{item.price}</h4>
+                </div>
+            </div>
+        ))
         const item = Product_Item.map(item => (
             <div className="Products">
                 <div>
@@ -17,7 +26,9 @@ class Products extends Component
                 </div>
             </div>
             ))
-        return(<div className="product">{item}</div>)
+        return(
+        <div>{item},{items}</div>
+        )
     }    
 }
 export default Products;
