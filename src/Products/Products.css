@@ -1,7 +1,5 @@
-.Product{
+.product{
     text-align: center;
     margin-top: 40px;
-}
-.Products div{
-    display: flex;
+    
 }

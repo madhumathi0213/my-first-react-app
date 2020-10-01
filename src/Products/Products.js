@@ -6,16 +6,18 @@ class Products extends Component
 {
     render() {
         const Product_Item =this.props.item;
-        console.log(Product_Item);
+        const price=this.props.price;
+        console.log(price);
         const item = Product_Item.map(item => (
-            <div className="Product">
-                <div><img src={item.image}></img></div>
-                <div>{item.name}</div>
-                <div>{item.price}</div>
+            <div className="Products">
+                <div>
+                    <img src={item.image}></img>
+                    <h1>{item.name}</h1>
+                    <h4>{item.price}</h4>
+                </div>
             </div>
             ))
-            console.log(item);
-        return(<div>{item}</div>)
+        return(<div className="product">{item}</div>)
     }    
 }
 export default Products;
