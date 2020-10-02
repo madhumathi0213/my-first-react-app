@@ -13,9 +13,13 @@ class Products extends Component
             <div className="Products">
                 <div>
                     <img src={item.image}></img>
-                    <h1>{item.name}</h1>
-                    <h4>{item.price}</h4>
                 </div>
+                <div >
+                    <h3>{item.name}</h3>
+                    <p>Rs. {item.price}</p>
+                </div>
+                <div><h6>Quantity</h6></div>
+
             </div>
             ))
          return(
