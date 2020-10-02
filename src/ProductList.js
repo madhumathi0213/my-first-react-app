@@ -1,4 +1,4 @@
-import charcoal from './Products/charcoal.png';
+import charcoal from './charcoal.png';
 
 export const  ProductItem=[
     {id:1,name:"Charcoal Soap",price:450,image:charcoal},

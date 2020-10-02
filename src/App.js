@@ -1,47 +1,38 @@
 import React,{Component} from 'react';
 import './App.css';
-import Header from './header/Header.js';
-import Products from './Products/Products';
+import Header from './Header.js';
 import {ProductItem} from './ProductList';
+import Products from './Products';
 
 class App extends Component {
   
   state={
-    ProductItem:ProductItem,
+    item: ProductItem,  
     search:null,
     search_price:null
 }
 searchHandler=(event)=>{
     let text=event.target.value;
-    this.setState({search:text})
+    // this.setState({search:text})
+    const i= ProductItem.filter((item)=> item.name.toLowerCase().includes(text));
+    this.setState({item:i})
+    // console.log("i",i);
+
 }
 searchPrice=(event)=>{
   let price =event.target.value;
-  this.setState({search_price:price})
-}
-SearchFilterHandler=()=>{
-     
-    return this.state.ProductItem.filter((item)=> item.name.toLowerCase().includes(this.state.search));
-}
-SearchByPriceHandler=()=>{
-    return this.state.ProductItem.filter((item) =>item.price >= this.state.search_price);
+  // this.setState({search_price:price})
+  const j= ProductItem.filter((item) =>item.price >= price);
+    this.setState({item:j})
+    // console.log("j",j);
+
 }
  render(){
-  let items=this.state.ProductItem;
-  let items1=this.state.ProductItem;
-  if(this.state.search != null)
-  {
-  items = this.SearchFilterHandler()
-  }
-  if(this.state.search_price != null)
-  {
-    items1=this.SearchByPriceHandler()
-  }
-  console.log(items1)
+
     return (
       <fragment>
         <Header search={this.searchHandler} search_price={this.searchPrice}/>
-        <Products item={items} price={items1}/>
+        <Products  item={this.state.item}/>
       </fragment>
     )
   }
